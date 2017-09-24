@@ -1,0 +1,30 @@
+" #############################################################################
+" # Vim Indent Guides
+" #############################################################################
+Bundle "nathanaelkane/vim-indent-guides"
+
+set ts=2 sw=2 et
+set background=dark
+let g:indent_guides_auto_colors = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
+
+
+" #############################################################################
+" # Close open marks
+" #############################################################################
+Bundle "Raimondi/delimitMate"
+
+let delimitMate_expand_cr = 1
+
+" #############################################################################
+" # Use editor config files
+" #############################################################################
+Bundle "editorconfig/editorconfig-vim"
+
+let g:EditorConfig_verbose = 1
+let g:EditorConfig_trim_trailing_whitespace = 1
+let g:EditorConfig_insert_final_newline = 1

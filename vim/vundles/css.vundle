@@ -1,0 +1,6 @@
+" #############################################################################
+" # CSS3 Syntax support
+" #############################################################################
+" Need to add some configurations for hightlight problems
+Bundle "hail2u/vim-css3-syntax"
+

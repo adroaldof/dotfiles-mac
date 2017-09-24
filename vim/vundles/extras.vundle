@@ -1,0 +1,73 @@
+" #############################################################################
+" # Waka Time
+" #############################################################################
+" Bundle "wakatime/vim-wakatime.git"
+
+
+" #############################################################################
+" # Auto Complete
+" #############################################################################
+" Bundle 'MarcWeber/vim-addon-mw-utils'
+" Bundle 'tomtom/tlib_vim'
+" Bundle 'garbas/vim-snipmate'
+
+" Optional:
+" Bundle 'honza/vim-snippets'
+
+
+" #############################################################################
+" # Auto Complete
+" #############################################################################
+" Bundle "Valloric/YouCompleteMe"
+
+" These are the tweaks I apply to YCM's config, you don't need them but they might help.
+" YCM gives you popups and splits by default that some people might not like, so these should tidy it up a bit for you.
+" let g:ycm_add_preview_to_completeopt=0
+" let g:ycm_confirm_extra_conf=0
+" set completeopt-=preview
+
+" #############################################################################
+" # Auto Comment
+" #############################################################################
+Bundle "tomtom/tcomment_vim.git"
+
+" #############################################################################
+" # Vim Git Gutter
+" #############################################################################
+Bundle "airblade/vim-gitgutter"
+
+" Speed for accuracy
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+
+" dark column
+" highlight SignColumn guibg=233
+highlight SignColumn ctermbg=235
+" highlight clear SignColumn
+" highlight GitGutterAdd ctermfg=green guifg=darkgreen
+" highlight GitGutterChange ctermfg=yellow guifg=darkyellow
+" highlight GitGutterDelete ctermfg=red guifg=darkred
+" highlight GitGutterChangeDelete ctermfg=yellow guifg=darkyellow
+
+" #############################################################################
+" # Force to repeting
+" #############################################################################
+Bundle "takac/vim-hardtime"
+
+let g:hardtime_default_on = 3
+let g:hardtime_showmsg = 3
+let g:hardtime_ignore_buffer_patterns = [ "NERD.*"  ]
+let g:hardtime_ignore_quickfix = 3
+let g:hardtime_allow_different_key = 3
+
+
+" #############################################################################
+" # Open CSV files
+" #############################################################################
+Bundle "chrisbra/csv.vim"
+
+" #############################################################################
+" # Save vim sessions
+" #############################################################################
+Bundle "tpope/vim-obsession"
+
