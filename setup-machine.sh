@@ -18,6 +18,11 @@ echo "##########################################################################
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 
+echo "###############################################################################"
+echo "# Install some packages"
+echo "###############################################################################"
+
+brew cask install chromium
 
 echo "###############################################################################"
 echo "# Install VSCode - b70770bfb1ae276b9a2fc594c6"

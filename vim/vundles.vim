@@ -23,15 +23,16 @@ Bundle "gmarik/vundle"
 " This reduces churn and makes it easier to fork. See
 " ~/.vim/vundles/ to edit them:
 
+" runtime css.vundle
+" runtime html.vundle
 runtime appearance.vundle
 runtime codestyles.vundle
-" runtime css.vundle
 runtime docker.vundle
 runtime extras.vundle
-" runtime html.vundle
 runtime javascript.vundle
 runtime project.vundle
 runtime search.vundle
+runtime typescript.vundle
 runtime vim-improvements.vundle
 
 
