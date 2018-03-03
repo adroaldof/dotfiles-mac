@@ -88,6 +88,8 @@ export WORKON_HOME=$HOME/.Envs
 # export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 # source /usr/local/bin/virtualenvwrapper.sh
 
+export PATH=/Users/adroaldof/.pyenv/shims/python:$PATH
+
 
 ###############################################################################
 # Environment Language
@@ -106,12 +108,12 @@ export GITHUB_ACCESS_TOKEN=""
 # Fiddus Server Configurations
 ###############################################################################
 
-# Amazon Access Key and Secret
+# Amazon Access Key and Secret - Dado Hey generated at 2018-01-29 19:25 UTC-0200
 export AWS_ACCESS_KEY_ID=""
 export AWS_SECRET_ACCESS_KEY=""
 
 # MailGun API Key
-export MAILGUN_APIKEY=""
+# export MAILGUN_APIKEY=""
 
 
 # ssh
