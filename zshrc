@@ -7,13 +7,10 @@ if [ $(whoami) = "root" ]; then
     export ZSH="/$(whoami)/.oh-my-zsh"
 fi
 
-source $ZSH/oh-my-zsh.sh
-
-
 ###############################################################################
 ## Set name of the theme to load.
 ###############################################################################
-ZSH_THEME="adro"
+ZSH_THEME="agnoster-improved"
 
 
 ###############################################################################
@@ -58,11 +55,6 @@ plugins=(git z)
 #==============================================================================
 
 ###############################################################################
-# PostgresApp
-###############################################################################
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin/
-
-###############################################################################
 # NVM Path
 ###############################################################################
 export NVM_DIR="/Users/$(whoami)/.nvm"
@@ -73,22 +65,19 @@ export NVM_DIR="/Users/$(whoami)/.nvm"
 ###############################################################################
 # PyEnv autocomplete
 ###############################################################################
-# export PYENV_ROOT="$HOME/.pyenv"
-# export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export WORKON_HOME="$HOME/.virtualenvs"
 
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-pyenv virtualenvwrapper > /dev/null
+if which pyenv > /dev/null; then
+    eval "$(pyenv init -)";
+fi
 
-export WORKON_HOME=$HOME/.Envs
-# export PROJECT_HOME=$HOME/dev
-# export VIRTUALENVWRAPPER_PYTHON=$(which python)
-# [ -s "$PYENV_ROOT/shims/virtualenvwrapper.sh" ] && . "$PYENV_ROOT/shims/virtualenvwrapper.sh"
-# export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-# export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
-# source /usr/local/bin/virtualenvwrapper.sh
-
-export PATH=/Users/adroaldof/.pyenv/shims/python:$PATH
+# Uncomment the last line after:
+# `pyenv install 3.6.4`
+# `pyenv global 3.6.4`
+pyenv virtualenvwrapper_lazy
 
 
 ###############################################################################
@@ -119,26 +108,18 @@ export AWS_SECRET_ACCESS_KEY=""
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-source $ZSH/oh-my-zsh.sh
-
 ###############################################################################
 # Aliases
 ###############################################################################
-alias tmux="tmux -2"
-alias ta="tmux attach -t"
-alias tnew="tmux new -s"
-alias tls="tmux ls"
-alias tkill="tmux kill-session -t"
+# alias tmux="tmux -2"
+# alias ta="tmux attach -t"
+# alias tnew="tmux new -s"
+# alias tls="tmux ls"
+# alias tkill="tmux kill-session -t"
 
 # alias pbcopy="xclip -selection clipboard"
 # alias bpaste="xclip -selection clipboard -o"
 
-###############################################################################
-# Source Bravi Aliases
-###############################################################################
-export ALIAS_PATH="/Users/$(whoami)/alias.sh"
-[ -s "$ALIAS_PATH" ] && . "$ALIAS_PATH"
-# source ~/alias.sh
 
 ###############################################################################
 # Additional env paths
@@ -146,3 +127,8 @@ export ALIAS_PATH="/Users/$(whoami)/alias.sh"
 export ENVS_PATH="/Users/$(whoami)/.zshrc.envs"
 [ -s "$ENVS_PATH" ] && . "$ENVS_PATH" # This loads nvm
 
+
+###############################################################################
+## Activate your oh-my-zsh installation.
+###############################################################################
+source $ZSH/oh-my-zsh.sh
