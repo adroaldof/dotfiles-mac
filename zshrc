@@ -132,3 +132,13 @@ export ENVS_PATH="/Users/$(whoami)/.zshrc.envs"
 ## Activate your oh-my-zsh installation.
 ###############################################################################
 source $ZSH/oh-my-zsh.sh
+
+
+###############################################################################
+## Path to your oh-my-zsh installation.
+###############################################################################
+custom_aliases="/Users/$(whoami)/.aliases.sh"
+
+if [ -f $custom_aliases ]; then
+  source $custom_aliases
+fi
