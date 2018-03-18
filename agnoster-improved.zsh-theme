@@ -70,7 +70,9 @@ prompt_end() {
   else
     echo -n "%{%k%}"
   fi
+
   echo -n "%{%f%}"
+  echo "\n%{$fg[white]%}$%{$reset_color%}%{$fg[white]%}➜%{$reset_color%} "
   CURRENT_BG=white
 }
 
