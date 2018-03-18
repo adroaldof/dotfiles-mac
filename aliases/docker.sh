@@ -20,6 +20,12 @@ function dclean () {
 }
 
 
+# Show docker images
+function dimages () {
+  docker images
+}
+
+
 # Filter containers by a given name, then tail the logs
 # Example: `docker_logs client`, tails the logs within a container where the name contains "client"
 function dlogs () {
