@@ -14,6 +14,8 @@
 echo "###############################################################################"
 echo "# Create All Symlinks to Dotfiles"
 echo "###############################################################################"
+rm -rf ~/.aliases > /dev/null 2>&1
+rm -rf ~/.aliases.sh > /dev/null 2>&1
 rm -rf ~/.gitconfig > /dev/null 2>&1
 rm -rf ~/.npmrc > /dev/null 2>&1
 rm -rf ~/.tmux.conf > /dev/null 2>&1
@@ -21,6 +23,8 @@ rm -rf ~/.vim > /dev/null 2>&1
 rm -rf ~/.vimrc > /dev/null 2>&1
 rm -rf ~/.zshrc > /dev/null 2>&1
 
+ln -s ~/mac-dotfiles/aliases ~/.aliases
+ln -s ~/mac-dotfiles/aliases.sh ~/.aliases.sh
 ln -s ~/mac-dotfiles/gitconfig ~/.gitconfig
 ln -s ~/mac-dotfiles/npmrc ~/.npmrc
 # ln -s ~/mac-dotfiles/tmux ~/.tmux
