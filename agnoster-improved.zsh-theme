@@ -66,9 +66,9 @@ prompt_segment() {
 # End the prompt, closing any open segments
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
-    echo -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
+    echo -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR "
   else
-    echo -n "%{%k%}"
+    echo -n "%{%k%} "
   fi
 
   echo -n "%{%f%}"
@@ -82,7 +82,7 @@ prompt_end() {
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black white "%(!.%{%F{yellow}%}.)$USER@%m"
+    prompt_segment black white "%(!.%{%F{yellow}%}.)$USER@%m "
   fi
 }
 
@@ -120,10 +120,10 @@ prompt_git() {
     zstyle ':vcs_info:*' enable git
     zstyle ':vcs_info:*' get-revision true
     zstyle ':vcs_info:*' check-for-changes true
-    zstyle ':vcs_info:*' stagedstr '✚'
-    zstyle ':vcs_info:*' unstagedstr '●'
-    zstyle ':vcs_info:*' formats ' %u%c'
-    zstyle ':vcs_info:*' actionformats ' %u%c'
+    zstyle ':vcs_info:*' stagedstr '✚ '
+    zstyle ':vcs_info:*' unstagedstr '● '
+    zstyle ':vcs_info:*' formats ' %u%c '
+    zstyle ':vcs_info:*' actionformats ' %u%c '
     vcs_info
     echo -n "${ref/refs\/heads\//$PL_BRANCH_CHAR }${vcs_info_msg_0_%% }${mode}"
   fi
@@ -189,7 +189,7 @@ prompt_hg() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment cyan black '%~'
+  prompt_segment cyan black '%~ '
 }
 
 # Virtualenv: current working virtualenv
@@ -207,9 +207,9 @@ prompt_virtualenv() {
 prompt_status() {
   local symbols
   symbols=()
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
-  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘ "
+  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡ "
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙ "
 
   [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
 }
