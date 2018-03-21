@@ -7,6 +7,18 @@ function dps () {
 }
 
 
+# Docker compose up api
+function cup () {
+  docker-compose up ${1:-api}
+}
+
+
+# Docker compose run test
+function crt () {
+  docker-compose run --rm ${1:-test}
+}
+
+
 # Stop and remove all containers
 function dreset () {
   docker stop $(docker ps -q)
