@@ -13,6 +13,12 @@ function cup () {
 }
 
 
+# Docker compose up api
+function cdown () {
+  docker-compose down
+}
+
+
 # Docker compose run test
 function crt () {
   docker-compose run --rm ${1:-test}
