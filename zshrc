@@ -22,6 +22,8 @@ export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
 export ARCHFLAGS="-arch x86_64"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CFLAGS="-I/usr/local/opt/openssl/include"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
@@ -49,6 +51,10 @@ HIST_STAMPS="dd/mm/yyyy"
 plugins=(git z)
 
 
+###############################################################################
+# Enable OpenSSL on Brew installation (deprecated by Apple)
+###############################################################################
+export PATH="/usr/local/opt/openssl/bin:$PATH"
 
 #==============================================================================
 #=========================  USER CONFIGURATIONS  ==============================
