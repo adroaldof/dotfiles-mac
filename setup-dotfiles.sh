@@ -2,10 +2,10 @@
 # echo "# Install Tmux Plugin Manager"
 # echo "###############################################################################"
 
-# if [ ! -d "~/mac-dotfiles/tmux/plugins" ]; then
+# if [ ! -d "~/dotfiles-mac/tmux/plugins" ]; then
 #     echo "Installing Tmux Plugin Manager"
-#     mkdir -p ~/mac-dotfiles/tmux/plugins/tpm
-#     git clone https://github.com/tmux-plugins/tpm ~/mac-dotfiles/tmux/plugins/tpm
+#     mkdir -p ~/dotfiles-mac/tmux/plugins/tpm
+#     git clone https://github.com/tmux-plugins/tpm ~/dotfiles-mac/tmux/plugins/tpm
 # else
 #     echo "We found Tmux Plugin Manager"
 # fi
@@ -23,15 +23,15 @@ rm -rf ~/.vim > /dev/null 2>&1
 rm -rf ~/.vimrc > /dev/null 2>&1
 rm -rf ~/.zshrc > /dev/null 2>&1
 
-ln -s ~/mac-dotfiles/aliases ~/.aliases
-ln -s ~/mac-dotfiles/aliases.sh ~/.aliases.sh
-ln -s ~/mac-dotfiles/gitconfig ~/.gitconfig
-ln -s ~/mac-dotfiles/npmrc ~/.npmrc
-# ln -s ~/mac-dotfiles/tmux ~/.tmux
-# ln -s ~/mac-dotfiles/tmux.conf ~/.tmux.conf
-ln -s ~/mac-dotfiles/vim ~/.vim
-ln -s ~/mac-dotfiles/vimrc ~/.vimrc
-ln -s ~/mac-dotfiles/zshrc ~/.zshrc
+ln -s ~/dotfiles-mac/aliases ~/.aliases
+ln -s ~/dotfiles-mac/aliases.sh ~/.aliases.sh
+ln -s ~/dotfiles-mac/gitconfig ~/.gitconfig
+ln -s ~/dotfiles-mac/npmrc ~/.npmrc
+# ln -s ~/dotfiles-mac/tmux ~/.tmux
+# ln -s ~/dotfiles-mac/tmux.conf ~/.tmux.conf
+ln -s ~/dotfiles-mac/vim ~/.vim
+ln -s ~/dotfiles-mac/vimrc ~/.vimrc
+ln -s ~/dotfiles-mac/zshrc ~/.zshrc
 
 
 echo "###############################################################################"
@@ -40,23 +40,23 @@ echo "##########################################################################
 rm -rf ~/.oh-my-zsh/themes/easy-look.zsh-theme > /dev/null 2>&1
 rm -rf ~/.oh-my-zsh/themes/agnoster-improved.zsh-theme > /dev/null 2>&1
 
-ln -s ~/mac-dotfiles/easy-look.zsh-theme ~/.oh-my-zsh/themes/easy-look.zsh-theme
-ln -s ~/mac-dotfiles/agnoster-improved.zsh-theme ~/.oh-my-zsh/themes/agnoster-improved.zsh-theme
+ln -s ~/dotfiles-mac/easy-look.zsh-theme ~/.oh-my-zsh/themes/easy-look.zsh-theme
+ln -s ~/dotfiles-mac/agnoster-improved.zsh-theme ~/.oh-my-zsh/themes/agnoster-improved.zsh-theme
 
 
 echo "###############################################################################"
 echo "# Install Fonts"
 echo "###############################################################################"
-cp ~/mac-dotfiles/fonts/* /Library/Fonts
+cp ~/dotfiles-mac/fonts/* /Library/Fonts
 
 
 echo "###############################################################################"
 echo "# Check for VundleVim Installation"
 echo "###############################################################################"
 
-if [ ! -d "~/mac-dotfiles/vim/bundle/Vundle.vim" ]; then
+if [ ! -d "~/dotfiles-mac/vim/bundle/Vundle.vim" ]; then
   echo "Installing VundleVim Package Manager"
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/mac-dotfiles/vim/bundle/Vundle.vim
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/dotfiles-mac/vim/bundle/Vundle.vim
 else
   echo "We found VundleVim Package Manager"
 fi
