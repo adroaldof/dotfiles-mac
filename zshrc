@@ -100,21 +100,6 @@ export GITHUB_ACCESS_TOKEN=""
 
 
 ###############################################################################
-# Fiddus Server Configurations
-###############################################################################
-
-# Amazon Access Key and Secret - Dado Hey generated at 2018-01-29 19:25 UTC-0200
-export AWS_ACCESS_KEY_ID=""
-export AWS_SECRET_ACCESS_KEY=""
-
-# MailGun API Key
-# export MAILGUN_APIKEY=""
-
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-###############################################################################
 # Aliases
 ###############################################################################
 # alias tmux="tmux -2"
@@ -148,3 +133,20 @@ custom_aliases="/Users/$(whoami)/.aliases.sh"
 if [ -f $custom_aliases ]; then
   source $custom_aliases
 fi
+
+
+###############################################################################
+# AWS
+###############################################################################
+
+aws_completer="/Users/$(whoami)/.pyenv/versions/$(python -V | cut -d" " -f2)/bin/aws_zsh_completer.sh"
+
+if [ -f $aws_completer ]; then
+    source $aws_completer
+fi
+
+# Amazon Access Key and Secret - Dado Hey generated at 2018-01-29 19:25 UTC-0200
+export AWS_ACCESS_KEY_ID=""
+export AWS_SECRET_ACCESS_KEY=""
+
+
