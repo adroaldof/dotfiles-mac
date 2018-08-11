@@ -25,13 +25,37 @@ function yt () {
 }
 
 
-# Yarn runt test watch
+# Yarn lint
+function yl () {
+  yarn lint
+}
+
+
+# Yarn run test watch
 function ytw () {
-  yarn run dev:test
+  yarn test:watch
+}
+
+
+# Yarn run test coverage
+function yc () {
+  yarn coverage
+}
+
+
+# Yarn run test coverage watch
+function ycw () {
+  yarn coverage:watch
 }
 
 
 # Yarn install
 function yi () {
-  yarn install ${1}
+  yarn add ${1}
+}
+
+
+# Yarn install dev
+function yid () {
+  yarn add -D ${1}
 }
