@@ -52,13 +52,13 @@ highlight SignColumn ctermbg=235
 " #############################################################################
 " # Force to repeting
 " #############################################################################
-Bundle "takac/vim-hardtime"
-
-let g:hardtime_default_on = 3
-let g:hardtime_showmsg = 3
-let g:hardtime_ignore_buffer_patterns = [ "NERD.*"  ]
-let g:hardtime_ignore_quickfix = 3
-let g:hardtime_allow_different_key = 3
+" Bundle "takac/vim-hardtime"
+"
+" let g:hardtime_default_on = 3
+" let g:hardtime_showmsg = 3
+" let g:hardtime_ignore_buffer_patterns = [ "NERD.*"  ]
+" let g:hardtime_ignore_quickfix = 3
+" let g:hardtime_allow_different_key = 3
 
 
 " #############################################################################
