@@ -17,8 +17,10 @@ ZSH_THEME="agnoster-improved"
 # Main Enviroment Path
 ###############################################################################
 export PATH=$PATH:"/Users/$(whoami)/setups/activator-dist-1.3.10/bin"
-export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java"
+export JAVA_HOME=$(/usr/libexec/java_home)
 
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 export ARCHFLAGS="-arch x86_64"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CFLAGS="-I/usr/local/opt/openssl/include"
@@ -78,12 +80,25 @@ export WORKON_HOME="$HOME/.virtualenvs"
 
 if which pyenv > /dev/null; then
     eval "$(pyenv init -)";
+    eval "$(pyenv virtualenv-init -)";
 fi
 
 # Uncomment the last line after:
 # `pyenv install 3.6.4`
 # `pyenv global 3.6.4`
 pyenv virtualenvwrapper_lazy
+
+
+###############################################################################
+# Android paths
+###############################################################################
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export DYLD_LIBRARY_PATH="$ANDROID_HOME/emulator/lib64/qt/lib"
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools/adb
 
 
 ###############################################################################
@@ -149,4 +164,12 @@ fi
 export AWS_ACCESS_KEY_ID=""
 export AWS_SECRET_ACCESS_KEY=""
 
+
+###############################################################################
+# Geth Ethereum
+###############################################################################
+
+export GETH_HOME=/Users/adroaldof/dev/eth/geth
+export GETH_DATA=/Users/adroaldof/dev/eth/geth/data
+export PATH=$PATH:$GETH_HOME
 
