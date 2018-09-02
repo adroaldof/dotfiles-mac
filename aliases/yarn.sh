@@ -3,7 +3,7 @@
 
 # Yarn command
 function y () {
-  yarn ${1}
+  yarn $@
 }
 
 
@@ -15,19 +15,25 @@ function ys () {
 
 # Yarn run
 function yr () {
-  yarn run ${1}
-}
-
-
-# Yarn run test
-function yt () {
-  yarn test ${1}
+  yarn run $@
 }
 
 
 # Yarn lint
 function yl () {
   yarn lint
+}
+
+
+# Yarn lint
+function ylw () {
+  yarn lint:watch
+}
+
+
+# Yarn run test
+function yt () {
+  yarn test $@
 }
 
 
@@ -51,11 +57,11 @@ function ycw () {
 
 # Yarn install
 function yi () {
-  yarn add ${1}
+  yarn add $@
 }
 
 
 # Yarn install dev
 function yid () {
-  yarn add -D ${1}
+  yarn add -D $@
 }
