@@ -7,9 +7,33 @@ function y () {
 }
 
 
+# Yarn add command
+function ya () {
+  yarn add $@
+}
+
+
+# Yarn add dev command
+function yad () {
+  yarn add --dev $@
+}
+
+
+# Yarn remove
+function yrm () {
+  yarn remove $@
+}
+
+
 # Yarn start
 function ys () {
   yarn start
+}
+
+
+# Yarn dev
+function yd () {
+  yarn dev
 }
 
 
