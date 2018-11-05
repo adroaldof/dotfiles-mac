@@ -31,6 +31,7 @@ runtime docker.vundle
 runtime extras.vundle
 runtime javascript.vundle
 runtime project.vundle
+runtime graphql.vundle
 runtime search.vundle
 runtime typescript.vundle
 runtime vim-improvements.vundle
