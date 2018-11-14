@@ -28,9 +28,8 @@ Bundle "gmarik/vundle"
 runtime appearance.vundle
 runtime codestyles.vundle
 runtime docker.vundle
-runtime extras.vundle
+runtime general-configs.vundle
 runtime javascript.vundle
-runtime project.vundle
 runtime graphql.vundle
 runtime search.vundle
 runtime typescript.vundle

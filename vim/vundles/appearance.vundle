@@ -1,4 +1,3 @@
-
 " Color colornames and codes
 Bundle "chrisbra/color_highlight.git"
 

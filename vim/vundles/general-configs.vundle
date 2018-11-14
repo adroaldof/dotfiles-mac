@@ -1,4 +1,31 @@
 " #############################################################################
+" # NERDTree Tab navigation for Vim
+" #############################################################################
+Bundle "scrooloose/nerdtree.git"
+let NERDTreeShowHidden = 1
+
+
+" #############################################################################
+" # NERDTree Git Status
+" #############################################################################
+Bundle "Xuyuanp/nerdtree-git-plugin"
+
+
+" #############################################################################
+" # Fuzzy file finder
+" #############################################################################
+Bundle "ctrlpvim/ctrlp.vim"
+
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = 'find %s -type f'
+let g:ctrlp_max_files = 100
+let g:ctrlp_max_depth = 5
+let g:ctrlp_working_path_mode = 2
+noremap <silent> <Leader>bb :CtrlPBuffer<Return>" open buffer fuzz  y list"
+
+" #############################################################################
 " # Waka Time
 " #############################################################################
 " Bundle "wakatime/vim-wakatime.git"
@@ -16,20 +43,10 @@ Bundle 'garbas/vim-snipmate'
 
 
 " #############################################################################
-" # Auto Complete
-" #############################################################################
-" Bundle "Valloric/YouCompleteMe"
-
-" These are the tweaks I apply to YCM's config, you don't need them but they might help.
-" YCM gives you popups and splits by default that some people might not like, so these should tidy it up a bit for you.
-" let g:ycm_add_preview_to_completeopt=0
-" let g:ycm_confirm_extra_conf=0
-" set completeopt-=preview
-
-" #############################################################################
 " # Auto Comment
 " #############################################################################
 Bundle "tomtom/tcomment_vim.git"
+
 
 " #############################################################################
 " # Vim Git Gutter
@@ -37,17 +54,18 @@ Bundle "tomtom/tcomment_vim.git"
 Bundle "airblade/vim-gitgutter"
 
 " Speed for accuracy
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
+" let g:gitgutter_realtime = 0
+" let g:gitgutter_eager = 0
 
 " dark column
-" highlight SignColumn guibg=233
+highlight SignColumn guibg=233
 highlight SignColumn ctermbg=235
-" highlight clear SignColumn
-" highlight GitGutterAdd ctermfg=green guifg=darkgreen
-" highlight GitGutterChange ctermfg=yellow guifg=darkyellow
-" highlight GitGutterDelete ctermfg=red guifg=darkred
-" highlight GitGutterChangeDelete ctermfg=yellow guifg=darkyellow
+highlight clear SignColumn
+highlight GitGutterAdd ctermfg=green guifg=darkgreen
+highlight GitGutterChange ctermfg=yellow guifg=darkyellow
+highlight GitGutterDelete ctermfg=red guifg=darkred
+highlight GitGutterChangeDelete ctermfg=yellow guifg=darkyellow
+
 
 " #############################################################################
 " # Force to repeting
@@ -66,8 +84,9 @@ highlight SignColumn ctermbg=235
 " #############################################################################
 Bundle "chrisbra/csv.vim"
 
+
 " #############################################################################
 " # Save vim sessions
 " #############################################################################
-Bundle "tpope/vim-obsession"
+" Bundle "tpope/vim-obsession"
 
