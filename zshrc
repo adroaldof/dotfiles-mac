@@ -173,3 +173,9 @@ export GETH_HOME=/Users/adroaldof/dev/eth/geth
 export GETH_DATA=/Users/adroaldof/dev/eth/geth/data
 export PATH=$PATH:$GETH_HOME
 
+###############################################################################
+# Configure redux dev tools
+###############################################################################
+
+export REACT_DEBUGGER="open -g 'rndebugger://set-debugger-loc?port=8081' || npx react-native start"
+
