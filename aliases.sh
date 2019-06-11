@@ -5,5 +5,6 @@
 . ~/.aliases/git.sh
 . ~/.aliases/helpers.sh
 . ~/.aliases/kubernetes.sh
+. ~/.aliases/npm.sh
 . ~/.aliases/yarn.sh
 
