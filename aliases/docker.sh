@@ -1,8 +1,8 @@
 #!/bin/bash
 
-GREEN='\033[1;32m'
-CYAN='\033[1;36m'
-NC='\033[0m'
+GREEN="\033[1;32m"
+CYAN="\033[1;36m"
+NC="\033[0m"
 
 # List containers
 function dps () {
@@ -11,17 +11,31 @@ function dps () {
 }
 
 
-# Docker compose up api
+# Docker compose up
 function cup () {
   echo "(${GREEN}cup [<service-names>]${NC}) ${CYAN}docker-compose up $@${NC}"
   docker-compose up $@
 }
 
 
+# Docker compose compose down and up
+function recup () {
+  echo "(${GREEN}recup [<service-names>]${NC}) ${CYAN}docker-compose down && docker-compose up $@${NC}"
+  docker-compose down && docker-compose up $@
+}
+
+
+# Docker compose run tests
+function crt () {
+  echo "(${GREEN}cup [<service-names>]${NC}) ${CYAN}docker-compose run --rm test $@${NC}"
+  docker-compose run --rm test $@
+}
+
+
 # Docker compose up api
 function cdown () {
-  echo "(${GREEN}cdown${NC}) ${CYAN}docker-compose down${NC}"
-  docker-compose down
+  echo "(${GREEN}cdown${NC}) ${CYAN}docker-compose down $@${NC}"
+  docker-compose down $@
 }
 
 
@@ -29,6 +43,13 @@ function cdown () {
 function crt () {
   echo "(${GREEN}crt <test-container>${NC}) ${CYAN}docker-compose run --rm ${1:-test}${NC}"
   docker-compose run --rm ${1:-test}
+}
+
+
+# Docker compose run service ports
+function csp () {
+  echo "(${GREEN}csp <test-container>${NC}) ${CYAN}docker-compose up -d db && docker-compose run --service-ports ${1}${NC}"
+  docker-compose up -d db && docker-compose run --service-ports ${1:-api}
 }
 
 
@@ -56,7 +77,7 @@ function dimages () {
 
 # Remove docker images
 function drmi () {
-  echo "(${GREEN}drmi <images>${NC}) ${CYAN}docker rmi -f $@${NC}"
+  echo "(${GREEN}drmi <images>${NC}) ${CYAN}docker rmi $@${NC}"
   docker rmi $@
 }
 
