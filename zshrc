@@ -1,7 +1,7 @@
 ###############################################################################
 ## Path to your oh-my-zsh installation.
 ###############################################################################
-export ZSH="/Users/$(whoami)/.oh-my-zsh"
+export ZSH=/Users/$(whoami)/.oh-my-zsh
 
 if [ $(whoami) = "root" ]; then
     export ZSH="/$(whoami)/.oh-my-zsh"
@@ -16,8 +16,8 @@ ZSH_THEME="agnoster-improved"
 ###############################################################################
 # Main Enviroment Path
 ###############################################################################
-export PATH=$PATH:"/Users/$(whoami)/setups/activator-dist-1.3.10/bin"
-export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH=$PATH:/Users/$(whoami)/setups/activator-dist-1.3.10/bin
+# export JAVA_HOME=$(/usr/libexec/java_home)
 
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
@@ -31,7 +31,7 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 # Hear Homebrews installations
-# export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 
 
 ###############################################################################
@@ -74,7 +74,7 @@ export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 ###############################################################################
 # NVM Path
 ###############################################################################
-export NVM_DIR="/Users/$(whoami)/.nvm"
+export NVM_DIR=/Users/$(whoami)/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This loads nvm
 
@@ -82,20 +82,20 @@ export NVM_DIR="/Users/$(whoami)/.nvm"
 ###############################################################################
 # PyEnv autocomplete
 ###############################################################################
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-export WORKON_HOME="$HOME/.virtualenvs"
+# export PYENV_ROOT="$HOME/.pyenv"
+# export PATH="$PYENV_ROOT/bin:$PATH"
+# export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+# export WORKON_HOME="$HOME/.virtualenvs"
 
-if which pyenv > /dev/null; then
-    eval "$(pyenv init -)";
-    eval "$(pyenv virtualenv-init -)";
-fi
+# if which pyenv > /dev/null; then
+#     eval "$(pyenv init -)";
+#     eval "$(pyenv virtualenv-init -)";
+# fi
 
-# Uncomment the last line after:
-# `pyenv install 3.6.4`
-# `pyenv global 3.6.4`
-pyenv virtualenvwrapper_lazy
+# # Uncomment the last line after:
+# # `pyenv install 3.6.4`
+# # `pyenv global 3.6.4`
+# pyenv virtualenvwrapper_lazy
 
 
 ###############################################################################
@@ -163,23 +163,23 @@ fi
 # AWS
 ###############################################################################
 
-aws_completer="/Users/$(whoami)/.pyenv/versions/$(python -V | cut -d" " -f2)/bin/aws_zsh_completer.sh"
+# aws_completer="/Users/$(whoami)/.pyenv/versions/$(python -V | cut -d" " -f2)/bin/aws_zsh_completer.sh"
 
-if [ -f $aws_completer ]; then
-    source $aws_completer
-fi
+# if [ -f $aws_completer ]; then
+#     source $aws_completer
+# fi
 
-# Amazon Access Key and Secret - Dado Hey generated at 2018-01-29 19:25 UTC-0200
-export AWS_ACCESS_KEY_ID=""
-export AWS_SECRET_ACCESS_KEY=""
+# # Amazon Access Key and Secret - Dado Hey generated at 2018-01-29 19:25 UTC-0200
+# export AWS_ACCESS_KEY_ID=""
+# export AWS_SECRET_ACCESS_KEY=""
 
 
 ###############################################################################
 # Geth Ethereum
 ###############################################################################
 
-export GETH_HOME=/Users/adroaldof/dev/eth/geth
-export GETH_DATA=/Users/adroaldof/dev/eth/geth/data
+export GETH_HOME=/Users/$(whoami)/dev/eth/geth
+export GETH_DATA=/Users/$(whoami)/dev/eth/geth/data
 export PATH=$PATH:$GETH_HOME
 
 ###############################################################################
@@ -188,3 +188,10 @@ export PATH=$PATH:$GETH_HOME
 
 export REACT_DEBUGGER="open -g 'rndebugger://set-debugger-loc?port=8081' || npx react-native start"
 
+
+###############################################################################
+# VSCode
+###############################################################################
+
+# export CODE_PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
+# export PATH=$PATH:$CODE_PATH

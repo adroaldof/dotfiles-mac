@@ -22,28 +22,31 @@ echo "##########################################################################
 echo "# Install some packages"
 echo "###############################################################################"
 
-brew tap phinze/cask
-
-brew install ack
-brew install bash-completions
-brew install brew-cask
 brew install git
 brew install kindle
 brew install nvm
-brew install pyenv
-brew install pyenv-virtualenv
-brew install pyenv-virtualenvwrapper
-brew install reattach-to-user-namespace
-brew install slack
-brew install spectacle
+# brew install slack
 brew install the-unarchiver
-brew install the_silver_searcher
 brew install tree
-brew install unrar
 brew install wget
+
+# Vim related
+brew install the_silver_searcher
+
+# Bash related
+brew install reattach-to-user-namespace
+brew install bash-completions
 brew install zsh
 brew install zsh-completions
 
+# Python related installs
+# brew install pyenv
+# brew install pyenv-virtualenv
+# brew install pyenv-virtualenvwrapper
+
+
+brew tap phinze/cask
+brew install brew-cask
 
 brew cask install qlcolorcode # Preview source code files with syntax highlighting
 brew cask install qlstephen # Preview plain text files without a file extension. Example: README, CHANGELOG, etc.
@@ -57,23 +60,17 @@ brew cask install webpquicklook # Preview WebP images
 brew cask install suspicious-package # Preview the contents of a standard Apple installer package
 
 
-brew cask install alfred
-brew cask install chromecast
-brew cask install chromium
-brew cask install code
-brew cask install evernote
-brew cask install firefox
-brew cask install google-chrome
-brew cask install google-drive
-brew cask install google-music-manager
-brew cask install iterm2
+# brew cask install alfred
+# brew cask install evernote
+# brew cask install visual-studio-code
+# brew cask install iterm2
+# brew cask install firefox
+# brew cask install google-chrome
+# brew cask install google-drive
 brew cask install spectacle
 brew cask install transmission
-brew cask install visual-studio-code
 
-
-brew cask alfred link
-
+# brew cask alfred link
 
 brew cleanup --force
 rm -rf /Library/Caches/Homebrew/*
