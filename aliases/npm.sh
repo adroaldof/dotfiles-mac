@@ -1,80 +1,71 @@
 #!/bin/bash
 
-
 # npm command
-function n () {
+function n() {
   npm i $@
 }
 
-
 # npm add command
-function ni () {
+function ni() {
   npm i -s $@
 }
 
-
 # npm add dev command
-function nid () {
+function nid() {
   npm i --only=dev $@
 }
 
-
 # npm remove
-function nrm () {
+function nrm() {
   npm uninstall $@
 }
 
-
 # npm start
-function ns () {
+function ns() {
   npm start $@
 }
 
-
 # npm dev
-function nd () {
+function nd() {
   npm run dev $@
 }
 
+# npm dev debug mode
+function ndd() {
+  npm run dev:debug $@
+}
 
 # npm run
-function nr () {
+function nr() {
   npm run $@
 }
 
-
 # npm lint
-function nl () {
+function nl() {
   npm run lint
 }
 
-
 # npm lint
-function nlw () {
+function nlw() {
   npm run lint:watch
 }
 
-
 # npm run test
-function nt () {
+function nt() {
   npm test $@
 }
 
-
 # npm run test watch
-function ntw () {
+function ntw() {
   npm run test:watch
 }
 
-
 # npm run test coverage
-function nc () {
+function nc() {
   npm run coverage
 }
 
-
 # npm run test coverage watch
-function ncw () {
+function ncw() {
   npm run coverage:watch
 }
-
