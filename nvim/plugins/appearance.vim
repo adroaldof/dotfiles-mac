@@ -1,5 +1,5 @@
 " =============================================================================
-" Base 16 colors 
+" Base 16 colors
 " =============================================================================
 "
 Plug 'chriskempson/base16-vim'
@@ -8,7 +8,7 @@ let base16colorspace=256  " Access colors present in 256 colorspace
 
 
 " =============================================================================
-" Vertical line indentation 
+" Vertical line indentation
 " =============================================================================
 "
 Plug 'Yggdroot/indentLine'
@@ -19,7 +19,7 @@ let g:indentLine_char = '│'
 
 
 " =============================================================================
-" Vertical line indentation  
+" Vertical line indentation
 " =============================================================================
 "
 Plug 'itchyny/lightline.vim'
@@ -34,18 +34,21 @@ let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileencoding', 'filetype', 'charvaluehex' ] ]
       \ },
       \ 'component_function': {
-      \   'fugitive': 'MyFugitive',
-      \   'readonly': 'MyReadonly',
-      \   'filename': 'MyFilename',
+      \   'readonly': 'GetCustomReadOnly',
+      \   'fugitive': 'GetGitBranch',
+      \   'filename': 'GetFileName'
       \ },
       \ 'separator': { 'left': '⮀', 'right': '⮂' },
       \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
       \ }
 
-function! MyReadonly()
+function! GetCustomReadOnly()
   if &filetype == "help"
     return ""
   elseif &readonly
@@ -55,7 +58,7 @@ function! MyReadonly()
   endif
 endfunction
 
-function! MyFugitive()
+function! GetGitBranch()
   if exists("*fugitive#head")
     let _ = fugitive#head()
     return strlen(_) ? '⭠ '._ : ''
@@ -63,8 +66,8 @@ function! MyFugitive()
   return ''
 endfunction
 
-function! MyFilename()
-  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+function! GetFileName()
+  return ('' != GetCustomReadOnly() ? GetCustomReadOnly() . ' ' : '') .
        \ ('' != expand('%') ? expand('%') : '[NoName]')
 endfunction
 

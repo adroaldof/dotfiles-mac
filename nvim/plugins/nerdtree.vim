@@ -1,4 +1,15 @@
+" =============================================================================
+" Nerd Tree 
+" =============================================================================
+"
 Plug 'scrooloose/nerdtree'
+
+let NERDTreeShowHidden = 1
+let NERDTreeQuitOnOpen = 1
+let NERDTreeShowLineNumbers = 1
+let NERDTreeIgnore=['__pycache__', '.vscode']
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 
 " Close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -26,11 +37,27 @@ call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
-" enable line numbers
-let NERDTreeShowLineNumbers=1
-
 " make sure relative line numbers are used
 autocmd FileType nerdtree setlocal relativenumber
 
-let NERDTreeIgnore=['__pycache__', '.vscode']
+
+" =============================================================================
+" Nerd Tree helpers
+" =============================================================================
+"
+Plug 'Xuyuanp/nerdtree-git-plugin'      " Show git status flags
+
+let g:NERDTreeShowIgnoredStatus = 1
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 
