@@ -7,6 +7,8 @@ if [ $(whoami) = "root" ]; then
     export ZSH="/$(whoami)/.oh-my-zsh"
 fi
 
+
+
 ###############################################################################
 ## Set name of the theme to load.
 ###############################################################################
@@ -134,6 +136,7 @@ export GITHUB_ACCESS_TOKEN=""
 
 # alias pbcopy="xclip -selection clipboard"
 # alias bpaste="xclip -selection clipboard -o"
+alias vim="nvim"
 
 
 ###############################################################################
@@ -195,3 +198,5 @@ export REACT_DEBUGGER="open -g 'rndebugger://set-debugger-loc?port=8081' || npx 
 
 # export CODE_PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code
 # export PATH=$PATH:$CODE_PATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

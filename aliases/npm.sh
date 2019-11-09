@@ -36,6 +36,11 @@ function ndd() {
 }
 
 # npm run
+function nb() {
+  npm run build
+}
+
+# npm run
 function nr() {
   npm run $@
 }
