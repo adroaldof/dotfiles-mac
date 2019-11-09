@@ -21,12 +21,5 @@ endfor
 Plug 'sheerun/vim-polyglot'
 
 
-" =============================================================================
-" Code helpers
-" =============================================================================
-"
-Plug 'tpope/vim-surround'               " Provides mappings to delete, change and add surroundings 
-Plug 'editorconfig/editorconfig-vim'    " Enable editor config on vim
-
 call plug#end()
 
