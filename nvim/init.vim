@@ -11,6 +11,7 @@ so ~/.config/nvim/plugins.vim
 "
 let mapleader=";"
 colorscheme solarized        	  " Set color theme
+set spell spelllang=en_us
 
 set number                      " Line numbers are good
 set relativenumber              " Set relative numbers to vim
