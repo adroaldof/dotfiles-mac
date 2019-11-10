@@ -5,6 +5,7 @@ set nocompatible
 
 " ================ General Config ====================
 
+set nowrap
 set number                      "Line numbers are good
 set relativenumber              "Set relative numbers to vim
 set backspace=indent,eol,start  "Allow backspace in insert mode

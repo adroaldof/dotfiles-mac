@@ -5,7 +5,7 @@
 Plug 'scrooloose/nerdtree'
 
 let NERDTreeShowHidden = 1
-let NERDTreeQuitOnOpen = 1
+" let NERDTreeQuitOnOpen = 1
 let NERDTreeShowLineNumbers = 1
 let NERDTreeIgnore=['__pycache__', '.vscode']
 let NERDTreeMinimalUI = 1

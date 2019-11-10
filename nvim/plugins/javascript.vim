@@ -52,7 +52,7 @@ autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.gra
 au FileType javascript setlocal formatprg=prettier
 au FileType javascript.jsx setlocal formatprg=prettier
 au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
-" au FileType typescript.tsx setlocal formatprg=prettier\ --parser\ typescript
+au FileType typescript.tsx setlocal formatprg=prettier\ --parser\ typescript
 au FileType html setlocal formatprg=js-beautify\ --type\ html
 au FileType scss setlocal formatprg=prettier\ --parser\ css
 au FileType css setlocal formatprg=prettier\ --parser\ css
@@ -83,4 +83,26 @@ function! StatusLineAleErrorMessage() abort
 endfunction
 
 set statusline=%{StatusLineAleErrorMessage()}
+
+
+" =============================================================================
+" Auto-import
+" =============================================================================
+"
+Plug 'ludovicchabant/vim-gutentags'
+" command: brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+
+Plug 'kristijanhusak/vim-js-file-import', {'do': 'npm install'}
+let g:js_file_import_sort_after_insert = 1
+let g:js_file_import_no_mappings = 1
+nnoremap <Leader>if <Plug>(JsFileImport)
+nnoremap <Leader>iF <Plug>(JsFileImportList)
+nnoremap <Leader>ig <Plug>(JsGotoDefinition)
+nnoremap <Leader>iG <Plug>(JsGotoDefinition)
+nnoremap <Leader>ip <Plug>(PromptJsFileImport)
+nnoremap <Leader>is <Plug>(SortJsFileImport)
+nnoremap <Leader>ic <Plug>(JsFixImport)
+nmap <C-i> <Plug>(JsFileImport)
+nmap <C-u> <Plug>(PromptJsFileImport):w
+
 
