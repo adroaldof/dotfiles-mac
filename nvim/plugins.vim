@@ -17,9 +17,5 @@ for fpath in split(globpath(vimsettings, "*.vim"), "\n")
 endfor
 
 
-" Plug 'terryma/vim-multiple-cursors'
-Plug 'sheerun/vim-polyglot'
-
-
 call plug#end()
 

@@ -12,6 +12,13 @@ let g:hardtime_allow_different_key = 2
 
 
 " =============================================================================
+" Language packs
+" =============================================================================
+"
+Plug 'sheerun/vim-polyglot'
+
+
+" =============================================================================
 " Comment toggle
 " =============================================================================
 
@@ -60,4 +67,8 @@ Plug 'tpope/vim-surround'               " Provides mappings to delete, change an
 " =============================================================================
 "
 Plug 'editorconfig/editorconfig-vim'    " Enable editor config on vim
+
+
+" Plug 'terryma/vim-multiple-cursors'
+
 
