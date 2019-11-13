@@ -61,3 +61,12 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
+
+" =============================================================================
+" Icons
+" =============================================================================
+"
+Plug 'ryanoasis/vim-devicons'
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+

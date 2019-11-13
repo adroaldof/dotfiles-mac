@@ -10,9 +10,15 @@ so ~/.config/nvim/plugins.vim
 " =============================================================================
 "
 let mapleader=";"
-colorscheme solarized        	  " Set color theme
+set cursorline
+set termguicolors
+syntax enable
+colorscheme night-owl
+hi CursorLine term=bold cterm=bold guibg=#052234
 set spell spelllang=en_us
+set encoding=UTF-8
 
+set nowrap                      " No wrap lines
 set number                      " Line numbers are good
 set relativenumber              " Set relative numbers to vim
 set backspace=indent,eol,start  " Allow backspace in insert mode

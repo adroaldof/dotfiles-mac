@@ -69,6 +69,13 @@ Plug 'tpope/vim-surround'               " Provides mappings to delete, change an
 Plug 'editorconfig/editorconfig-vim'    " Enable editor config on vim
 
 
+" =============================================================================
+" Snippets
+" =============================================================================
+"
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 " Plug 'terryma/vim-multiple-cursors'
 
 

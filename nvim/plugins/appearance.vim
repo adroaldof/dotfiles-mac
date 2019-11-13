@@ -25,13 +25,13 @@ let g:indentLine_char = '│'
 Plug 'itchyny/lightline.vim'
 "
 " If not work set the follow line on '.vimrc'
-" set laststatus=2 " Light line config
+set laststatus=2 " Light line config
 
 " Use status bar even with single buffer
 set laststatus=2
 
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'nightowl',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
@@ -75,9 +75,15 @@ endfunction
 " Colors
 " =============================================================================
 "
-Plug 'skwp/vim-colors-solarized'
+" Plug 'skwp/vim-colors-solarized'
 "
 " set termguicolors
-syntax enable                   " Enable syntax highlight
-set background=dark		          " Set background to dark color
+" syntax enable                   " Enable syntax highlight
+" set background=dark		          " Set background to dark color
+
+Plug 'haishanh/night-owl.vim'
+" set termguicolors
+" syntax enable
+" colorscheme night-owl
+" let g:lightline = { 'colorscheme': 'nightowl' }
 
