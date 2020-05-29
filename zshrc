@@ -12,8 +12,10 @@ fi
 ###############################################################################
 ## Set name of the theme to load.
 ###############################################################################
-ZSH_THEME="agnoster-improved"
-
+ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE="Fira Code"
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
 ###############################################################################
 # Main Enviroment Path

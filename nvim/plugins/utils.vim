@@ -2,13 +2,13 @@
 " Force to use vim the right way
 " =============================================================================
 "
-Plug 'takac/vim-hardtime'
-
-let g:hardtime_default_on = 3
-let g:hardtime_showmsg = 3
-let g:hardtime_ignore_buffer_patterns = [ "NERD.*"  ]
-let g:hardtime_ignore_quickfix = 3
-let g:hardtime_allow_different_key = 2
+" Plug 'takac/vim-hardtime'
+"
+" let g:hardtime_default_on = 4
+" let g:hardtime_showmsg = 4
+" let g:hardtime_ignore_buffer_patterns = [ "NERD.*" ]
+" let g:hardtime_ignore_quickfix = 3
+" let g:hardtime_allow_different_key = 2
 
 
 " =============================================================================

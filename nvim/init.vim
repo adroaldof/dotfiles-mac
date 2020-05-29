@@ -1,3 +1,4 @@
+if !exists('g:vscode')
 " =============================================================================
 " Load plugins
 " =============================================================================
@@ -12,11 +13,12 @@ so ~/.config/nvim/plugins.vim
 let mapleader=";"
 set cursorline
 set termguicolors
+set guifont=Hack\ Nerd\ Font:h15
 syntax enable
-colorscheme night-owl
+" colorscheme night-owl
 hi CursorLine term=bold cterm=bold guibg=#052234
 set spell spelllang=en_us
-set encoding=UTF-8
+set encoding=utf8
 
 set nowrap                      " No wrap lines
 set number                      " Line numbers are good
@@ -28,7 +30,7 @@ set showmode                    " Show current mode down the bottom
 set visualbell                  " No sounds
 set autoread                    " Reload files changed outside vim
 set nrformats=                  " Set decimals numers as default
-set hidden			                " Enable background Buffers 
+set hidden			                " Enable background Buffers
 set mouse=a			                " Enable mouse
 
 
@@ -79,16 +81,16 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
-" 
+"
 " " Auto indent pasted text
 " nnoremap p p=`]<C-o>
 " nnoremap P P=`]<C-o>
-" 
+"
 " filetype plugin on
 " " filetype indent on
-" 
+"
 " " set list listchars=tab:\ \ ,trail:· " Show tabs and trailing spaces visually
-" 
+"
 " set nowrap                      " Don't wrap lines
 " set linebreak                   " Wrap lines at convenient point
 
@@ -139,3 +141,5 @@ nnoremap <leader>ev :vsplit ~/.config/nvim/init.vim<CR>
 nnoremap <leader>sv :source ~/.config/nvim/init.vim<CR>
 nnoremap <leader>pi :PlugInstall<CR>
 nnoremap <leader>pu :PlugUpdate<CR>
+
+endif

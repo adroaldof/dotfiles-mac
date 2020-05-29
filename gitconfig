@@ -2,7 +2,7 @@
 	name = Adroaldo de Andrade
 	email = adroaldof@gmail.com
 [core]
-	editor = vim
+	editor = nvim
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     autocrlf = input  # true for windows
 [push]

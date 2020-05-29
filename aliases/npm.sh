@@ -5,6 +5,11 @@ function n() {
   npm i $@
 }
 
+# npm add package and types
+function nit() {
+  npm i -s $@ && npm i -D @types/$@
+}
+
 # npm add command
 function ni() {
   npm i -s $@

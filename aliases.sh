@@ -7,5 +7,6 @@
 . ~/.aliases/kubernetes.sh
 . ~/.aliases/npm.sh
 . ~/.aliases/system.sh
+. ~/.aliases/virtual-box.sh
 . ~/.aliases/yarn.sh
 

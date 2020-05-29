@@ -37,16 +37,19 @@ let g:lightline = {
       \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ],
       \   'right': [ [ 'lineinfo' ],
       \              [ 'percent' ],
-      \              [ 'fileencoding', 'filetype', 'charvaluehex' ] ]
+      \              [ 'fileencoding', 'fileformat', 'filetype', 'charvaluehex' ] ]
       \ },
       \ 'component_function': {
       \   'readonly': 'GetCustomReadOnly',
       \   'fugitive': 'GetGitBranch',
       \   'filename': 'GetFileName'
       \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ 'separator': { 'left': '⮀', 'right': '|' },
+      \ 'subseparator': { 'left': '⮁', 'right': '|' }
       \ }
+
+"      \   'filetype': 'GetFileType',
+"      \   'fileformat': 'GetFileFormat'
 
 function! GetCustomReadOnly()
   if &filetype == "help"
@@ -69,6 +72,14 @@ endfunction
 function! GetFileName()
   return ('' != GetCustomReadOnly() ? GetCustomReadOnly() . ' ' : '') .
        \ ('' != expand('%') ? expand('%') : '[NoName]')
+endfunction
+
+function! GetFileType()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+
+function! GetFileFormat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
 " =============================================================================

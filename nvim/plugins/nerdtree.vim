@@ -47,7 +47,7 @@ autocmd FileType nerdtree setlocal relativenumber
 "
 Plug 'Xuyuanp/nerdtree-git-plugin'      " Show git status flags
 
-let g:NERDTreeShowIgnoredStatus = 1
+" let g:NERDTreeShowIgnoredStatus = 1
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
@@ -66,7 +66,9 @@ let g:NERDTreeIndicatorMapCustom = {
 " Icons
 " =============================================================================
 "
-Plug 'ryanoasis/vim-devicons'
-let g:webdevicons_enable = 1
-let g:webdevicons_enable_nerdtree = 1
+" Plug 'ryanoasis/vim-webdevicons'
+" let g:webdevicons_enable = 1
+" let g:webdevicons_enable_nerdtree = 1
+" let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
+" let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 
