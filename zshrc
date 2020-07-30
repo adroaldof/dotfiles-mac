@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 ###############################################################################
 ## Path to your oh-my-zsh installation.
 ###############################################################################
@@ -8,14 +15,12 @@ if [ $(whoami) = "root" ]; then
 fi
 
 
-
 ###############################################################################
 ## Set name of the theme to load.
 ###############################################################################
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE="Fira Code"
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+ZSH_THEME="powerlevel10k/powerlevel10k"
+POWERLEVEL10K_MODE="Fira Code"
+
 
 ###############################################################################
 # Main Enviroment Path
@@ -227,3 +232,6 @@ fi
 if which ruby >/dev/null && which gem >/dev/null; then
   PATH="$(ruby -r rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
