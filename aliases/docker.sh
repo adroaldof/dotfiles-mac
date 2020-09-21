@@ -48,9 +48,8 @@ function csp() {
 
 # Stop and remove all containers
 function dreset() {
-  echo "(${GREEN}dreset${NC}) ${CYAN}docker stop $(docker ps -q) && docker rm $(docker ps -aq)${NC}"
-  docker stop $(docker ps -q) || true
-  docker rm $(docker ps -aq) || true
+  echo "(${GREEN}dreset${NC}) ${CYAN}docker stop $(docker ps -q) || true && docker rm $(docker ps -aq) || true${NC}"
+  docker stop $(docker ps -q) || true && docker rm $(docker ps -aq) || true
 }
 
 # Cleand dangling images
