@@ -3,30 +3,31 @@
 	email = adroaldof@gmail.com
 [core]
 	editor = nvim
-    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    autocrlf = input  # true for windows
+  whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  autocrlf = input  # true for windows
 [push]
-    default = simple
+	default = simple
 [pull]
-    rebase = true
+  rebase = true
 [merge]
-    conflictsyle = diff3
+  conflictsyle = diff3
 [color]
-    ui = auto
+  ui = auto
 [color "branch"]
-    current = yellow
-    local = green
-    remote = cyan
+  current = yellow
+  local = green
+  remote = cyan
 [color "diff"]
-    meta = yellow
-    frag = magenta
-    old = red
-    new = green
-    whitespace = red reverse
+  meta = yellow
+  frag = magenta
+  old = red
+  new = green
+  whitespace = red reverse
 [color "status"]
-    added = green
-    changed = yellow
-    untracked = red
-
-[gui]
-	recentrepo = /Users/adroaldof/dev/bravi/quanta/pqp
+  added = green
+  changed = yellow
+  untracked = red
+[alias]
+	lga = log --graph --oneline --all --decorate
+[help]
+	autocorrect = 5
