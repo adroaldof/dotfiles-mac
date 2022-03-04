@@ -31,3 +31,5 @@
 	lga = log --graph --oneline --all --decorate
 [help]
 	autocorrect = 5
+[init]
+	defaultBranch = main

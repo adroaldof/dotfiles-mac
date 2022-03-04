@@ -67,7 +67,7 @@ function nt() {
 
 # npm run test watch
 function ntw() {
-  npm run test:watch
+  npm run test-watch
 }
 
 # npm run test coverage

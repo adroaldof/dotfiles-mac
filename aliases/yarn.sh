@@ -63,7 +63,7 @@ function yt () {
 
 # Yarn run test watch
 function ytw () {
-  yarn test:watch
+  yarn test-watch
 }
 
 
@@ -88,4 +88,16 @@ function yi () {
 # Yarn install dev
 function yid () {
   yarn add -D $@
+}
+
+
+# Yarn dsa
+function ydsa () {
+  yarn dsa $@
+}
+
+
+# Yarn dtw
+function ydtw () {
+  yarn dtw-e2e $@
 }

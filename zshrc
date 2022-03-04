@@ -26,7 +26,8 @@ POWERLEVEL10K_MODE="Fira Code"
 # Main Enviroment Path
 ###############################################################################
 export PATH=$PATH:/Users/$(whoami)/setups/activator-dist-1.3.10/bin
-# export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_301.jdk/Contents/Home"
+export PATH=$JAVA_HOME/bin:$PATH
 
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
@@ -59,7 +60,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # ZSH Plugins
 # Example format: plugins=(rails git textmate ruby lighthouse)
 ###############################################################################
-plugins=(git z)
+plugins=(git z kubectl)
 
 
 ###############################################################################
@@ -91,20 +92,30 @@ export NVM_DIR=/Users/$(whoami)/.nvm
 ###############################################################################
 # PyEnv autocomplete
 ###############################################################################
-# export PYENV_ROOT="$HOME/.pyenv"
-# export PATH="$PYENV_ROOT/bin:$PATH"
-# export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-# export WORKON_HOME="$HOME/.virtualenvs"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
-# if which pyenv > /dev/null; then
-#     eval "$(pyenv init -)";
-#     eval "$(pyenv virtualenv-init -)";
-# fi
+if command -v pyenv 1> /dev/null 2>&1; then
+    eval "$(pyenv init -)";
+fi
+
+if [[ -n $VIRTUAL_ENV && -e "${VIRTUAL_ENV}/bin/activate" ]]; then
+  source "${VIRTUAL_ENV}/bin/activate"
+fi
 
 # # Uncomment the last line after:
 # # `pyenv install 3.6.4`
 # # `pyenv global 3.6.4`
 # pyenv virtualenvwrapper_lazy
+
+
+###############################################################################
+# pipenv
+###############################################################################
+
+if [[ -n $(which pipenv) ]]; then
+  export PATH=$PATH:$(which pipenv)
+fi
 
 
 ###############################################################################
@@ -168,7 +179,6 @@ if [ -f $custom_aliases ]; then
   source $custom_aliases
 fi
 
-
 ###############################################################################
 # AWS
 ###############################################################################
@@ -217,7 +227,7 @@ then
 
   # Setting fd as the default source for fzf
   # export FZF_DEFAULT_COMMAND='fd --type f'
-  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+  export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git --exclude node_modules'
 
   # Now fzf (w/o pipe) will use fd instead of find
   # fzf
@@ -235,3 +245,34 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+###############################################################################
+# Docker
+###############################################################################
+
+export DOCKER_CLIENT_TIMEOUT=120
+export COMPOSE_HTTP_TIMEOUT=120
+
+
+###############################################################################
+# Go
+###############################################################################
+
+if [[ -d /usr/local/go/bin ]]; then
+  PATH="/usr/local/go/bin:$PATH"
+fi
+
+
+###############################################################################
+# Kubernetes
+###############################################################################
+
+export KUBE_EDITOR=nvim
+source <(kubectl completion zsh)
+source <(helm completion zsh)
+alias k=kubectl
+
+###############################################################################
+# Kubernetes KIND
+###############################################################################
+
