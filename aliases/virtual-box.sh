@@ -14,3 +14,8 @@ function vbstop() {
   echo "VBoxManage controlvm $@ poweroff --type headless"
   VBoxManage controlvm $@ poweroff --type headless
 }
+
+function vbbridgeip() {
+  echo "VBoxManage guestproperty enumerate '$@' | grep -i ip | awk '/value:/{print $4}' | sed 's/,//g'"
+  VBoxManage guestproperty enumerate $@ | grep -i ip | awk '/value:/{print $4}' | sed 's/,//g'
+}
