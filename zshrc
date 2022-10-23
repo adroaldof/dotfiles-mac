@@ -60,7 +60,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # ZSH Plugins
 # Example format: plugins=(rails git textmate ruby lighthouse)
 ###############################################################################
-plugins=(git z kubectl)
+plugins=(git z kubectl docker docker-compose)
 
 
 ###############################################################################
