@@ -19,7 +19,6 @@ fi
 ## Set name of the theme to load.
 ###############################################################################
 ZSH_THEME="powerlevel10k/powerlevel10k"
-POWERLEVEL10K_MODE="Fira Code"
 
 
 ###############################################################################
@@ -60,7 +59,7 @@ HIST_STAMPS="dd/mm/yyyy"
 # ZSH Plugins
 # Example format: plugins=(rails git textmate ruby lighthouse)
 ###############################################################################
-plugins=(git z kubectl docker docker-compose)
+plugins=(git z kubectl docker docker-compose zsh-syntax-highlighting zsh-autosuggestions)
 
 
 ###############################################################################
@@ -144,20 +143,6 @@ export GITHUB_ACCESS_TOKEN=""
 
 
 ###############################################################################
-# Aliases
-###############################################################################
-# alias tmux="tmux -2"
-# alias ta="tmux attach -t"
-# alias tnew="tmux new -s"
-# alias tls="tmux ls"
-# alias tkill="tmux kill-session -t"
-
-# alias pbcopy="xclip -selection clipboard"
-# alias bpaste="xclip -selection clipboard -o"
-alias vim="nvim"
-
-
-###############################################################################
 # Additional env paths
 ###############################################################################
 export ENVS_PATH="/Users/$(whoami)/.zshrc.envs"
@@ -178,6 +163,23 @@ custom_aliases="/Users/$(whoami)/.aliases.sh"
 if [ -f $custom_aliases ]; then
   source $custom_aliases
 fi
+
+
+###############################################################################
+# Aliases
+###############################################################################
+# alias tmux="tmux -2"
+# alias ta="tmux attach -t"
+# alias tnew="tmux new -s"
+# alias tls="tmux ls"
+# alias tkill="tmux kill-session -t"
+
+# alias pbcopy="xclip -selection clipboard"
+# alias bpaste="xclip -selection clipboard -o"
+alias vim="nvim"
+alias ls='colorls'
+alias ll='colorls -l'
+
 
 ###############################################################################
 # AWS
@@ -244,6 +246,9 @@ if which ruby >/dev/null && which gem >/dev/null; then
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/powerlevel10k/powerlevel10k.zsh-theme ]] || source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ###############################################################################
@@ -273,6 +278,10 @@ source <(helm completion zsh)
 alias k=kubectl
 
 ###############################################################################
-# Kubernetes KIND
+# ZSH Completions
+# https://daten-und-bass.io/blog/fixing-docker-command-auto-completion-in-mac-os-catalina/
+# https://thevaluable.dev/zsh-completion-guide-examples/
 ###############################################################################
-
+autoload -Uz compinit
+fpath=(~/.zsh/completion $fpath)
+compinit -i

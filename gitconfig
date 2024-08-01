@@ -11,6 +11,7 @@
   rebase = true
 [merge]
   conflictsyle = diff3
+	ff = false
 [color]
   ui = auto
 [color "branch"]

@@ -24,6 +24,10 @@ function yrm () {
   yarn remove $@
 }
 
+# Yarn build
+function yb () {
+  yarn build
+}
 
 # Yarn start
 function ys () {
@@ -66,6 +70,10 @@ function ytw () {
   yarn test-watch
 }
 
+# Yarn run test watch
+function ytwv () {
+  yarn test-watch-verbose
+}
 
 # Yarn run test coverage
 function yc () {
@@ -75,7 +83,7 @@ function yc () {
 
 # Yarn run test coverage watch
 function ycw () {
-  yarn coverage:watch
+  yarn coverage-watch
 }
 
 
