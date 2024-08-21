@@ -12,38 +12,38 @@ function dps() {
 
 # Docker compose up
 function cup() {
-  echo "(${GREEN}cup [<service-names>]${NC}) ${CYAN}docker-compose up $@${NC}"
+  echo "(${GREEN}cup [<service-names>]${NC}) ${CYAN}docker compose up $@${NC}"
   docker compose up $@
 }
 
 # Docker compose compose down and up
 function recup() {
-  echo "(${GREEN}recup [<service-names>]${NC}) ${CYAN}docker-compose down && docker-compose up $@${NC}"
-  docker compose down && docker-compose up $@
+  echo "(${GREEN}recup [<service-names>]${NC}) ${CYAN}docker compose down && docker compose up $@${NC}"
+  docker compose down && docker compose up $@
 }
 
 # Docker compose run tests
 function crt() {
-  echo "(${GREEN}cup [<service-names>]${NC}) ${CYAN}docker-compose run --rm test $@${NC}"
+  echo "(${GREEN}cup [<service-names>]${NC}) ${CYAN}docker compose run --rm test $@${NC}"
   docker compose run --rm test $@
 }
 
 # Docker compose up api
 function cdown() {
-  echo "(${GREEN}cdown${NC}) ${CYAN}docker-compose down $@${NC}"
+  echo "(${GREEN}cdown${NC}) ${CYAN}docker compose down $@${NC}"
   docker compose down $@
 }
 
 # Docker compose run test
 function crt() {
-  echo "(${GREEN}crt <test-container>${NC}) ${CYAN}docker-compose run --rm ${1:-test}${NC}"
+  echo "(${GREEN}crt <test-container>${NC}) ${CYAN}docker compose run --rm ${1:-test}${NC}"
   docker compose run --rm ${1:-test}
 }
 
 # Docker compose run service ports
 function csp() {
-  echo "(${GREEN}csp <test-container>${NC}) ${CYAN}docker-compose up -d db && docker-compose run --service-ports ${1}${NC}"
-  docker compose up -d db && docker-compose run --service-ports ${1:-api}
+  echo "(${GREEN}csp <test-container>${NC}) ${CYAN}docker compose up -d db && docker compose run --service-ports ${1}${NC}"
+  docker compose up -d db && docker compose run --service-ports ${1:-api}
 }
 
 # Stop and remove all containers
