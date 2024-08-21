@@ -92,7 +92,7 @@ export NVM_DIR=/Users/$(whoami)/.nvm
 # PyEnv autocomplete
 ###############################################################################
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/shims:$PATH"
 
 if command -v pyenv 1> /dev/null 2>&1; then
     eval "$(pyenv init -)";
@@ -177,8 +177,6 @@ fi
 # alias pbcopy="xclip -selection clipboard"
 # alias bpaste="xclip -selection clipboard -o"
 alias vim="nvim"
-alias ls='colorls'
-alias ll='colorls -l'
 
 
 ###############################################################################
