@@ -90,9 +90,3 @@ function dex() {
   COMMAND="$@"
   docker exec -it $(docker ps --filter "name=$CONTAINER" -q) $COMMAND
 }
-
-add-tenant() {
-  local NEW_TENANT=$1
-  echo 127.0.0.1 $NEW_TENANT.local.imperium.markets | sudo tee -a /etc/hosts
-  echo 127.0.0.1 $NEW_TENANT.api.local.imperium.markets | sudo tee -a /etc/hosts
-}

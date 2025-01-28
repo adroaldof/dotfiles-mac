@@ -1,30 +1,19 @@
 # OS X Dotfiles Configurations
 
 Everyone likes to setup the working machine on your way. That's my way. Feel free to check it out :+1:
-**Important**: This is *my way* to make the computer works to my needs.  Feel free to suggest something but remind to do not stay sad if I do not accept it :wink:
+**Important**: This is _my way_ to make the computer works to my needs. Feel free to suggest something but remind to do not stay sad if I do not accept it :wink:
 
 ## What it has
 
 In my days working I got used to some facilities and some times I need to get rid of old stuffs and reinstall every thing again. But instead of make all manually I prefer made it with ease
-
-
-### Making some basic installs
-
-Now there are some programs that I like. It can be installed with the follow script
-
-```bash
-./mac-dotfiles/setup-machine.sh
-```
-
 
 ### Now simlink everything
 
 With this script you will configure `Vim`, `Tmux`, `Zsh` and `Oh-my-zsh` theme, add some needed fonts to make vim looks great
 
 ```bash
-./mac-dotfiles/setup-dotfiles.sh
+./dotfiles-mac/setup-dotfiles.sh
 ```
-
 
 #### Thank to awesome help of the follow people
 
