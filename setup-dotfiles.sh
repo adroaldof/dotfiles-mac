@@ -17,7 +17,7 @@ ln -s $(pwd)/aliases.sh ~/.aliases.sh
 ln -s $(pwd)/gitconfig ~/.gitconfig
 ln -s $(pwd)/npmrc ~/.npmrc
 ln -s $(pwd)/zshrc ~/.zshrc
-ln -s $(pwd)/nvim ~/.config/nvim
+ln -s $(pwd)/nvim-content ~/.config/nvim
 ln -s $(pwd)/tmux ~/.tmux
 ln -s $(pwd)/tmux.conf ~/.tmux.conf
 
