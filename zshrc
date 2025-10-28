@@ -32,6 +32,10 @@ COMPLETION_WAITING_DOTS="true"
 # History command output date format
 ###############################################################################
 HIST_STAMPS="dd/mm/yyyy"
+setopt HIST_SAVE_NO_DUPS    # Don't write duplicate entries in the history file.
+setopt HIST_IGNORE_ALL_DUPS # Delete old entry if a new entry is a duplicate.
+setopt HIST_REDUCE_BLANKS   # Remove superfluous blanks before saving.
+setopt HIST_EXPIRE_DUPS_FIRST # Expire duplicated entries first when history is trimmed.
 
 ###############################################################################
 # Environment Language
@@ -105,4 +109,13 @@ source $ZSH/oh-my-zsh.sh
 fpath=(/Users/adr/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
-# End of Docker CLI completions
+
+
+###############################################################################
+## Cloude, Cursor
+###############################################################################
+export PATH="$HOME/.local/bin:$PATH"
+
+. "$HOME/.local/bin/env"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
