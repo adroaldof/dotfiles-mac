@@ -19,7 +19,13 @@ ZSH_THEME="bira"
 ###############################################################################
 # Main Enviroment Path
 ###############################################################################
-# Hear Homebrews installations
+# Homebrew (Apple Silicon, Intel Mac, or Linuxbrew)
+for brew_prefix in /opt/homebrew /usr/local /home/linuxbrew/.linuxbrew; do
+  if [[ -x "$brew_prefix/bin/brew" ]]; then
+    eval "$("$brew_prefix/bin/brew" shellenv)"
+    break
+  fi
+done
 export PATH=/usr/local/bin:$PATH
 
 ###############################################################################
@@ -102,7 +108,7 @@ export KUBE_EDITOR=nvim
 ## Activate your oh-my-zsh installation.
 ###############################################################################
 # The following line was added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/adr/.docker/completions $fpath)
+fpath=($HOME/.docker/completions $fpath)
 source $ZSH/oh-my-zsh.sh
 
 
