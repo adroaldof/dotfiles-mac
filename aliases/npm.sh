@@ -57,7 +57,7 @@ function n() {
 }
 
 # npm add package and types
-function nit() {
+function nat() {
   local pm_cmd=$(get_pm_cmd)
   case $pm_cmd in
     "yarn")
@@ -73,7 +73,7 @@ function nit() {
 }
 
 # npm add command
-function ni() {
+function na() {
   local pm_cmd=$(get_pm_cmd)
   case $pm_cmd in
     "yarn")
@@ -89,7 +89,7 @@ function ni() {
 }
 
 # npm add dev command
-function nid() {
+function nad() {
   local pm_cmd=$(get_pm_cmd)
   case $pm_cmd in
     "yarn")
@@ -100,6 +100,26 @@ function nid() {
       ;;
     *)
       npm i --only=dev $@
+      ;;
+  esac
+}
+
+# npm install (all deps when no args, otherwise add package)
+function ni() {
+  if [ $# -gt 0 ]; then
+    na $@
+    return
+  fi
+  local pm_cmd=$(get_pm_cmd)
+  case $pm_cmd in
+    "yarn")
+      yarn
+      ;;
+    "pnpm")
+      pnpm install
+      ;;
+    *)
+      npm install
       ;;
   esac
 }
