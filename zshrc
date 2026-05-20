@@ -2,12 +2,11 @@
 ## Path to your oh-my-zsh installation.
 ###############################################################################
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="bira"
 
 ###############################################################################
-## Path to your oh-my-zsh installation.
+## Custom aliases
 ###############################################################################
-custom_aliases="/Users/$(whoami)/.aliases.sh"
+custom_aliases="$HOME/.aliases.sh"
 if [ -f $custom_aliases ]; then
   source $custom_aliases
 fi
@@ -76,9 +75,8 @@ alias vim="nvim"
 ###############################################################################
 # NVM Path
 ###############################################################################
-export NVM_DIR=/Users/$(whoami)/.nvm
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh" # This loads nvm
 
 ###############################################################################
 # Docker
@@ -97,29 +95,23 @@ fi
 # Kubernetes
 ###############################################################################
 export KUBE_EDITOR=nvim
-alias k=kubectl
 # source <(kubectl completion zsh)
 # source <(helm completion zsh)
 
 ###############################################################################
 ## Activate your oh-my-zsh installation.
 ###############################################################################
-source $ZSH/oh-my-zsh.sh
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+# The following line was added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/adr/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
+source $ZSH/oh-my-zsh.sh
 
 
 ###############################################################################
-## Cloude, Cursor
+## Claude, Cursor
 ###############################################################################
 export PATH="$HOME/.local/bin:$PATH"
-
-. "$HOME/.local/bin/env"
+[ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
 
 # Serena aliases
 alias serena="uvx --from git+https://github.com/oraios/serena serena"
-export PATH="$HOME/.local/bin:$PATH"
