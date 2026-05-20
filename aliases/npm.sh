@@ -263,35 +263,3 @@ function ntw() {
       ;;
   esac
 }
-
-# npm run test coverage
-function nc() {
-  local pm_cmd=$(get_pm_cmd)
-  case $pm_cmd in
-    "yarn")
-      yarn coverage
-      ;;
-    "pnpm")
-      pnpm coverage
-      ;;
-    *)
-      npm run coverage
-      ;;
-  esac
-}
-
-# npm run test coverage watch
-function ncw() {
-  local pm_cmd=$(get_pm_cmd)
-  case $pm_cmd in
-    "yarn")
-      yarn coverage:watch
-      ;;
-    "pnpm")
-      pnpm coverage:watch
-      ;;
-    *)
-      npm run coverage:watch
-      ;;
-  esac
-}
