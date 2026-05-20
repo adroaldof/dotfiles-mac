@@ -10,8 +10,12 @@
 [pull]
 	rebase = true
 [merge]
-	conflictsyle = diff3
+	conflictstyle = zdiff3
 	ff = false
+[fetch]
+	prune = true
+[rerere]
+	enabled = true
 [color]
 	ui = auto
 [color "branch"]
