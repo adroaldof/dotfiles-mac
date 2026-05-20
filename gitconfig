@@ -34,6 +34,3 @@
 	autocorrect = 5
 [init]
 	defaultBranch = main
-
-[includeIf "gitdir:/Users/adr/dev/imperium"]
-	path = ~/.gitconfig-imperium

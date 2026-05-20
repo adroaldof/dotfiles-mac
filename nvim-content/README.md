@@ -1,55 +1,21 @@
 # NeoVim
 
-This is a highly opinionated [NeoVim](https://neovim.io/) configurations file
+Personal Neovim config, managed with [Lazy.nvim](https://github.com/folke/lazy.nvim).
 
-It is using [Lazy.nvim](https://github.com/folke/lazy.nvim) as plugin manager
+## Requirements
 
-## Install NeoVim
+- **Neovim 0.12+** (nightly). The treesitter `main` branch and `vim.lsp.config` API are 0.12-aware.
+- **`tree-sitter` CLI** on PATH (`brew install tree-sitter-cli` — note: plain `brew install tree-sitter` only installs the library, not the binary, since the formula was split). Required by the new nvim-treesitter rewrite to compile parsers locally.
+- **Node.js** — needed by several LSP servers Mason installs (`ts_ls`, `eslint`, `yamlls`, …). The repo's `zshrc` sources `nvm` automatically.
 
-Follow the steps from [https://github.com/neovim/neovim/wiki/Installing-Neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md)
+## Install
 
-## Add a alias
-
-Add to your `.bashrc` or `.zshrc`
-
-```bash
-alias vim=nvim
-```
-
-## Check NeoVim's Health
-
-Some plugins need additional packages installed like [NodeJs](https://nodejs.org/) or [Python](https://www.python.org/). Maybe it is a good time to have them set up
+Once `~/.config/nvim` points at this directory (via `../setup-dotfiles.sh`), just launch nvim. Lazy bootstraps itself on first run, installs every plugin, and writes `lazy-lock.json`.
 
 ```bash
-
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
-
-# add the follow to the .bashrc if it is not there yet
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-
-# install a version
-nvm install stable
+nvim
+# inside nvim, useful commands:
+:Lazy        # plugin manager UI
+:Mason       # LSP/DAP/linter/formatter installer
+:checkhealth # diagnose any setup issue
 ```
-
-## Clone this configurations
-
-Now you are good to install this vim configurations
-
-```bash
-git clone https://github.com/adroaldof/nvim-lua.git ~/.config/nvim
-```
-
-## Install Plugins
-
-At first run of NeoVim you will need type the follow command to make the first plugin install
-
-```bash
-:PackerInstall
-```
-
-Any plugin change you will need to add it to the `lua/adr/packer.lua` file and make the setup to the `after/plugin` when necessary
-
----
-
-Enjoy it :+1:

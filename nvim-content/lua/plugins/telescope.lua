@@ -1,6 +1,12 @@
 return {
   "nvim-telescope/telescope.nvim",
   cmd = { "Telescope" },
+  keys = {
+    { "<leader>p", function() require("telescope.builtin").find_files() end, desc = "Find files" },
+    { "<C-p>",     function() require("telescope.builtin").git_files() end,  desc = "Git files" },
+    { "<leader>b", function() require("telescope.builtin").buffers() end,    desc = "Buffers" },
+    { "<C-f>",     "<cmd>Telescope live_grep theme=ivy<cr>",                 desc = "Live grep" },
+  },
   dependencies = {
     { "nvim-lua/plenary.nvim" },
     { "nvim-telescope/telescope-file-browser.nvim" },

@@ -1,72 +1,39 @@
-local is_treesitter_ok, treesitter = pcall(require, "nvim-treesitter.configs")
-if not is_treesitter_ok then
-  print("Please, ensure install of `nvim-treesitter/nvim-treesitter` plugin")
-  return
-end
+-- nvim-treesitter `main` branch (post-2025 rewrite).
+-- Requires Neovim 0.12+ and the `tree-sitter` CLI on PATH.
 
-treesitter.setup({
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-      local configs = require("nvim-treesitter.configs")
+local parsers = {
+	"bash",
+	"css",
+	"dockerfile",
+	"gitignore",
+	"go",
+	"hcl",
+	"html",
+	"javascript",
+	"json",
+	"lua",
+	"luadoc",
+	"markdown",
+	"markdown_inline",
+	"python",
+	"scss",
+	"sql",
+	"terraform",
+	"tsx",
+	"typescript",
+	"vim",
+	"vimdoc",
+	"yaml",
+}
 
-      configs.setup({
-        sync_install = false,
-        auto_install = true,
-        ensure_installed = {
-          "bash",
-          "css",
-          "dockerfile",
-          "gitignore",
-          "glimmer",
-          "go",
-          "hcl",
-          "helm",
-          "html",
-          "http",
-          "json",
-          "lua",
-          "luadoc",
-          "markdown",
-          "pem",
-          "prisma",
-          "python",
-          "scss",
-          "javascript",
-          "sql",
-          "terraform",
-          "tsx",
-          "typescript",
-          "vim",
-          "yaml",
-        },
-        indent = {
-          enable = true,
-        },
-        highlight = {
-          enable = true,
-          additional_vim_regex_highlighting = false,
-        },
-        autotag = {
-          enable = true,
-        },
-        rainbow = {
-          enable = true,
-          extended_mode = true,
-          max_file_lines = nil,
-        },
-      })
-    end,
-  },
-})
+-- Install asynchronously. No-op for parsers that are already installed.
+require("nvim-treesitter").install(parsers)
 
--- Closing a tag causes built-in LSP to update diagnostics incorrectly
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  underline = true,
-  virtual_text = {
-    spacing = 5,
-    severity_limit = "Warning",
-  },
-  update_in_insert = true,
+-- Enable highlight + treesitter-based indent for the parsers we installed.
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = parsers,
+	callback = function()
+		pcall(vim.treesitter.start)
+		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+	end,
 })
