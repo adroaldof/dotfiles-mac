@@ -1,21 +1,27 @@
-# OS X Dotfiles Configurations
+# OS X Dotfiles
 
-Everyone likes to setup the working machine on your way. That's my way. Feel free to check it out :+1:
-**Important**: This is _my way_ to make the computer works to my needs. Feel free to suggest something but remind to do not stay sad if I do not accept it :wink:
+Personal macOS dotfiles for `zsh`, `tmux`, `neovim`, `git`, and `npm`/`yarn` workflows. Files are installed onto the host via symlinks pointing at the working tree.
 
-## What it has
+## What it configures
 
-In my days working I got used to some facilities and some times I need to get rid of old stuffs and reinstall every thing again. But instead of make all manually I prefer made it with ease
+- **Zsh** + Oh-my-zsh with the `bira` theme — `zshrc`
+- **Aliases** as zsh functions, one file per tool (`docker`, `git`, `helpers`, `kubernetes`, `npm`, `system`, `yarn`) — `aliases/`, entry point `aliases.sh`
+- **NeoVim** bootstrapped with Lazy.nvim — `nvim-content/`
+- **Tmux** — `tmux.conf`
+- **Git** — `gitconfig`
+- **npm** — `npmrc`
 
-### Now simlink everything
+## Install
 
-With this script you will configure `Vim`, `Tmux`, `Zsh` and `Oh-my-zsh` theme, add some needed fonts to make vim looks great
+Run from the repo root (the script uses `$(pwd)` to compute symlink targets):
 
 ```bash
-./dotfiles-mac/setup-dotfiles.sh
+./setup-dotfiles.sh
 ```
 
-#### Thank to awesome help of the follow people
+The script first prints a prerequisite report (✓/✗ for `zsh`, `oh-my-zsh`, `neovim`, `tmux`, `git`, `brew`, `nvm`, `go`, `kubectl`, `docker`, `aws`, `gh`, `glab`) — it never installs or upgrades anything, you handle that yourself. It then removes any existing target (`~/.zshrc`, `~/.config/nvim`, etc.) and creates a fresh symlink. Since symlinks point at the working tree, edits to tracked files take effect on the next shell/editor reload — no need to re-run the script unless you add a new top-level file.
+
+## Credits
 
 - [Github - Dotfiles](https://dotfiles.github.io/)
 - [SJ Bach - Configuring Vim Right](http://items.sjbach.com/319/configuring-vim-right)
